@@ -1,11 +1,10 @@
-const Formatter = (function () {
-    const $main_menu = $("#main-menu");
+const Renderer = (function () {
 
     const load = () => {
-        $main_menu.load("header.html", managePages);
+        $("#main-menu").load("header.html", managePages);
     };
 
-    // Manages dynamic page interactivity
+    // Manages page interactivity
     const managePages = () => {
         if(window.location.pathname === "/site/index.html"){
             toggleHeader("home-link");
@@ -52,12 +51,17 @@ const Formatter = (function () {
         let $projects = $("#projects");
         let tmp = "";
         const imageArr = Array('./img/data.jpg', "'./img/car.png'", "'./img/web.png'");
+        const videoArr = Array('https://www.youtube.com/watch?v=999AQMEhrTE');
         for (let i = 0; i < response.length; i++){
             tmp += "<div class='project'>";
             tmp += `<img class='project-image' src= ${imageArr[i]}/>`;
             tmp += `<p class='project-title'> ${response[i].name} </p>`;
             tmp += "<div class='project-link'>";
             tmp += `<a href= ${response[i].svn_url}><img class='mini-icon' src='./img/github.png' alt='Github Image'/></a>`;
+            if (i === 1){
+                tmp += `<a href= ${videoArr[0]}><img class="mini-icon" src="./img/youtube.png" alt='Youtube Image'/></a>  `
+            }
+
             tmp += "</div>";
             tmp += `<p class='project-desc'> ${response[i].description}</p>`;
             tmp += "</div>";
@@ -71,5 +75,5 @@ const Formatter = (function () {
 })();
 
 $(function () {
-    Formatter.load();
+    Renderer.load();
 });
