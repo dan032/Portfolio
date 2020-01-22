@@ -50,12 +50,9 @@ body{
     height: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     max-width: 1200px;
     position: relative;
-}
-
-.project{
-    width: 40%;
 }
 
 .project-link{
@@ -71,7 +68,7 @@ body{
     background: #333;
     margin: 10px 5px 0;
 }
-.project .project-image{
+.project-image{
     width: 30%;
     min-width: 50px;
     display: block;
@@ -102,6 +99,7 @@ body{
 .resume-header{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
 }
 
@@ -126,4 +124,16 @@ body{
 .resume-items{
     padding-left: 20px;
     margin: 0 0 15px 0;
+}
+
+@media screen and (min-width: 800px){
+    .project{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .project{
+        width: 30%;
+    }
 }
