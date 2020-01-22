@@ -50,15 +50,15 @@ const Renderer = (function () {
     const renderResponse = (response) =>{
         let $projects = $("#projects");
         let tmp = "";
-        const imageArr = Array('./img/data.jpg', "'./img/car.png'", "'./img/web.png'");
+        const imageArr = Array("'./img/election.png'",'./img/data.jpg', "'./img/car.png'", "'./img/web.png'");
         const videoArr = Array('https://www.youtube.com/watch?v=999AQMEhrTE');
         for (let i = 0; i < response.length; i++){
             tmp += "<div class='project'>";
-            tmp += `<img class='project-image' src= ${imageArr[i]}/>`;
+            tmp += `<img class='project-image' src= ${imageArr[i]} alt="Image for Project"/>`;
             tmp += `<p class='project-title'> ${response[i].name} </p>`;
             tmp += "<div class='project-link'>";
             tmp += `<a href= ${response[i].svn_url}><img class='mini-icon' src='./img/github.png' alt='Github Image'/></a>`;
-            if (i === 1){
+            if (i === 2){
                 tmp += `<a href= ${videoArr[0]}><img class="mini-icon" src="./img/youtube.png" alt='Youtube Image'/></a>  `
             }
 
