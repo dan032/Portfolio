@@ -29,17 +29,20 @@ const Formatter = (function () {
         const url = "https://api.github.com/users/dan032/repos";
         let xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
-        xhr.send();
 
-        xhr.onload = () => {
-            if (xhr.status !== 200){
-                console.log("Error Loading Github Information")
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4){
+                return;
             }
-            else{
+            if (xhr.status === 200){
                 const response = JSON.parse(xhr.responseText);
                 renderResponse(response);
             }
+            else{
+                console.log("Error Loading Github Information")
+            }
         }
+        xhr.send();
     };
 
     const renderResponse = (response) =>{
@@ -52,7 +55,7 @@ const Formatter = (function () {
             tmp += "<img class='project-image' src=" + imageArr[i] + "/>"
             tmp += "<p class='project-title'>" + response[i].name + "</p>"
             tmp += "<div class='project-link'>"
-            tmp += "<img class='mini-icon' src='./img/github.png' alt='Github Image'/>"
+            tmp += "<a href=" + response[i].svn_url + "><img class='mini-icon' src='./img/github.png' alt='Github Image'/></a>"
             tmp += "</div>"
             tmp += "<p class='project-desc'>" + response[i].description + "</p>"
             tmp += "</div>"
