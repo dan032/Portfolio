@@ -1,8 +1,8 @@
 const Formatter = (function () {
-    const $main_menu = $("#main-menu")
+    const $main_menu = $("#main-menu");
 
     const load = () => {
-        $main_menu.load("header.html", managePages)
+        $main_menu.load("header.html", managePages);
     };
 
     // Manages which link in the header is currently active, and begins relevant API requests
@@ -11,7 +11,7 @@ const Formatter = (function () {
             toggleHeader("home-link");
         }
         else if(window.location.pathname === "/site/projects.html"){
-            gitHubRequest()
+            gitHubRequest();
             toggleHeader("projects-link");
         }
         else if (window.location.pathname === "/site/resume.html"){
@@ -41,33 +41,32 @@ const Formatter = (function () {
             else{
                 console.log("Error Loading Github Information")
             }
-        }
+        };
         xhr.send();
     };
 
     const renderResponse = (response) =>{
-        let $projects = $("#projects")
+        let $projects = $("#projects");
         let tmp = "";
-        const imageArr = Array("'./img/car.png'", "'./img/web.png'")
-        const iconArr = Array("'/img/github.png", "'")
+        const imageArr = Array("'./img/car.png'", "'./img/web.png'");
         for (let i = 0; i < response.length; i++){
-            tmp += "<div class='project'>"
-            tmp += "<img class='project-image' src=" + imageArr[i] + "/>"
-            tmp += "<p class='project-title'>" + response[i].name + "</p>"
-            tmp += "<div class='project-link'>"
-            tmp += "<a href=" + response[i].svn_url + "><img class='mini-icon' src='./img/github.png' alt='Github Image'/></a>"
-            tmp += "</div>"
-            tmp += "<p class='project-desc'>" + response[i].description + "</p>"
-            tmp += "</div>"
+            tmp += "<div class='project'>";
+            tmp += "<img class='project-image' src=" + imageArr[i] + "/>";
+            tmp += "<p class='project-title'>" + response[i].name + "</p>";
+            tmp += "<div class='project-link'>";
+            tmp += "<a href=" + response[i].svn_url + "><img class='mini-icon' src='./img/github.png' alt='Github Image'/></a>";
+            tmp += "</div>";
+            tmp += "<p class='project-desc'>" + response[i].description + "</p>";
+            tmp += "</div>";
         }
-        $projects.append(tmp)
+        $projects.append(tmp);
     };
 
     return {
         load,
-    }
+    };
 })();
 
 $(function () {
-    Formatter.load()
-})
+    Formatter.load();
+});
