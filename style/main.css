@@ -1,3 +1,37 @@
+body{
+    background: whitesmoke;
+}
+
 .nav{
-    margin-top: 20px;
+    margin: 20px 50px 50px 0;
+}
+
+.container{
+    height: 400px;
+    width: 800px;
+    text-align: center;
+}
+
+.container h5, p, img{
+    margin: 20px 0px
+}
+
+.container h5{
+    color: #007bff;
+}
+
+.container hr {
+    width: 300px;
+}
+
+.container img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.container .icons{
+    width: 40px;
+    height: 40px;
 }
