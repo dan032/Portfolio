@@ -6,7 +6,7 @@ const Renderer = (function () {
 
     // Manages page interactivity
     const managePages = () => {
-        if(window.location.pathname === "/site/index.html"){
+        if(window.location.pathname === "/site/home.html"){
             toggleHeader("home-link");
         }
         else if(window.location.pathname === "/site/projects.html"){
