@@ -31,11 +31,64 @@ body{
     display: inline-block;
 }
 
+
 .icons{
     width: 40px;
     height: 40px;
     margin: 0 10px;
+}
 
+.project-container{
+
+    width: 95%;
+    max-width: 1200px;
+    height: 60%;
+    margin: 100px auto;
+}
+
+#projects{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    position: relative;
+}
+
+.project{
+    width: 40%;
+}
+
+.project-link{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.project .mini-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #333;
+    margin: 10px 5px 0;
+}
+.project .project-image{
+    width: 30%;
+    min-width: 50px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+.project-title{
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.project-desc{
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 5px;
 }
 
 .resume{
@@ -72,4 +125,5 @@ body{
 
 .resume-items{
     padding-left: 20px;
+    margin: 0 0 15px 0;
 }

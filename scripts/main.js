@@ -1,13 +1,12 @@
 const Formatter = (function () {
     const $main_menu = $("#main-menu")
 
-
     const load = () => {
-        $main_menu.load("header.html", manageHeader)
-
+        $main_menu.load("header.html", managePages)
     };
 
-    const manageHeader = () => {
+    // Manages which link in the header is currently active, and begins relevant API requests
+    const managePages = () => {
         if(window.location.pathname === "/site/index.html"){
             toggleHeader("home-link");
         }
@@ -33,7 +32,7 @@ const Formatter = (function () {
         xhr.send();
 
         xhr.onload = () => {
-            if (xhr.status != 200){
+            if (xhr.status !== 200){
                 console.log("Error Loading Github Information")
             }
             else{
@@ -41,18 +40,25 @@ const Formatter = (function () {
                 renderResponse(response);
             }
         }
-
-    }
+    };
 
     const renderResponse = (response) =>{
         let $projects = $("#projects")
         let tmp = "";
-
+        const imageArr = Array("'./img/car.png'", "'./img/web.png'")
+        const iconArr = Array("'/img/github.png", "'")
         for (let i = 0; i < response.length; i++){
-            tmp += "<div class='project'><p>" + response[i].name + "</p>" + "<p>" + response[i].description + "</p></div>"
+            tmp += "<div class='project'>"
+            tmp += "<img class='project-image' src=" + imageArr[i] + "/>"
+            tmp += "<p class='project-title'>" + response[i].name + "</p>"
+            tmp += "<div class='project-link'>"
+            tmp += "<img class='mini-icon' src='./img/github.png' alt='Github Image'/>"
+            tmp += "</div>"
+            tmp += "<p class='project-desc'>" + response[i].description + "</p>"
+            tmp += "</div>"
         }
         $projects.append(tmp)
-    }
+    };
 
     return {
         load,
