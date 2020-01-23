@@ -10,7 +10,6 @@ const Renderer = (function () {
             toggleHeader("home-link");
         }
         else if(window.location.pathname === "/site/projects.html"){
-            gitHubRequest();
             toggleHeader("projects-link");
         }
         else if (window.location.pathname === "/site/resume.html"){
@@ -23,50 +22,6 @@ const Renderer = (function () {
         let link = document.getElementById(id);
         link.classList.toggle("active");
         link.setAttribute("href", "#");
-    };
-
-    // Performs API request to GitHub to access my current projects
-    const gitHubRequest = () => {
-        const url = "https://api.github.com/users/dan032/repos";
-        let xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState !== 4){
-                return;
-            }
-            if (xhr.status === 200){
-                const response = JSON.parse(xhr.responseText);
-                renderResponse(response);
-            }
-            else{
-                console.log("Error Loading Github Information")
-            }
-        };
-        xhr.send();
-    };
-
-    // Parses and renders the GitHub Projects
-    const renderResponse = (response) =>{
-        let $projects = $("#projects");
-        let tmp = "";
-        const imageArr = Array("'./img/election.png'",'./img/data.jpg', "'./img/car.png'", "'./img/web.png'");
-        const videoArr = Array('https://www.youtube.com/watch?v=999AQMEhrTE');
-        for (let i = 0; i < response.length; i++){
-            tmp += "<div class='project'>";
-            tmp += `<img class='project-image' src= ${imageArr[i]} alt="Image for Project"/>`;
-            tmp += `<p class='project-title'> ${response[i].name} </p>`;
-            tmp += "<div class='project-link'>";
-            tmp += `<a href= ${response[i].svn_url}><img class='mini-icon' src='./img/github.png' alt='Github Image'/></a>`;
-            if (i === 2){
-                tmp += `<a href= ${videoArr[0]}><img class="mini-icon" src="./img/youtube.png" alt='Youtube Image'/></a>  `
-            }
-
-            tmp += "</div>";
-            tmp += `<p class='project-desc'> ${response[i].description}</p>`;
-            tmp += "</div>";
-        }
-        $projects.append(tmp);
     };
 
     return {
