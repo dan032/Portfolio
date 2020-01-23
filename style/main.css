@@ -234,6 +234,10 @@ h6 span{
         border-radius: 15%;
         margin-bottom: 5% ;
     }
+
+    .nav-item{
+        margin: 0 20px;
+    }
 }
 
 @media screen and (min-width: 1200px){
