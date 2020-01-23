@@ -20,6 +20,10 @@ h6 span{
     color: #007bff;
 }
 
+#portfolio-nav{
+    text-align: center;
+}
+
 #logo{
     font-size: 30px;
     margin-left: 40px;
@@ -63,8 +67,6 @@ h6 span{
     max-width: 1200px;
     height: 50%;
     margin: 100px auto;
-
-
 }
 
 #projects{
