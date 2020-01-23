@@ -16,7 +16,7 @@ h6 span{
     margin: 20px 50px 50px 0;
     position: relative;
 }
-.navbar-light .navbar-nav .nav-link, #logo{
+.navbar-light .navbar-nav .nav-link, #logo, .container h5{
     color: #007bff;
 }
 
@@ -35,8 +35,8 @@ h6 span{
     margin: 20px 0px
 }
 
-.container h5, .project-title{
-    color: #007bff;
+.project-title{
+    color: #090050;
 
 }
 
@@ -104,6 +104,7 @@ h6 span{
     display: block;
     margin: 20px auto;
     border-radius: 50%;
+    background-color: transparent;
 }
 
 .project-title{
@@ -175,6 +176,7 @@ h6 span{
         border: 1px solid lightgray;
         border-radius: 15%;
         margin-bottom: 10% ;
+        background: #3cdab4;
     }
     .resume-item-title span{
         display: none;
