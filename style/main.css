@@ -217,7 +217,9 @@ h6 span{
         display: initial;
     }
 
-
+    .resume-section h4{
+        text-align: initial;
+    }
 }
 
 @media screen and (min-width: 800px){
