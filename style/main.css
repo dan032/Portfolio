@@ -27,6 +27,8 @@ h6 span{
 #logo{
     font-size: 30px;
     margin-left: 40px;
+    pointer-events: none;
+    cursor: default;
 }
 
 .container{
