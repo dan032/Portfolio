@@ -164,6 +164,10 @@ h6 span{
 
 @media screen and (min-width: 200px){
 
+    .container{
+        width: 80%;
+    }
+
     .header-right{
         display: flex;
         margin-top: 5px;
@@ -172,19 +176,36 @@ h6 span{
         justify-content: center;
     }
     .project{
-        width: 80%;
+        width: 90%;
         border: 1px solid lightgray;
         border-radius: 15%;
         margin-bottom: 10% ;
         background: #3cdab4;
+        height: 80%;
+    }
+
+    .header-left, .header-right, .resume-header, .resume-section{
+        margin: 0 auto 15px auto;
+        align-items: center;
+    }
+    .resume-section p{
+        align-items: flex-start;
     }
     .resume-item-title span{
         display: none;
     }
 
+    .resume-section h4{
+        text-align: center;
+    }
+
 }
 
 @media screen and (min-width: 723px){
+
+    .container{
+        width: 60%;
+    }
     .header-right{
         display: flex;
         flex-direction: column;
