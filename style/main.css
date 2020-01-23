@@ -9,6 +9,8 @@ h6 span{
     font-weight: normal;
     float: right;
     text-decoration: underline;
+
+
 }
 .nav{
     margin: 20px 50px 50px 0;
@@ -174,16 +176,26 @@ h6 span{
         border-radius: 15%;
         margin-bottom: 10% ;
     }
+    .resume-item-title span{
+        display: none;
+    }
+
 }
 
-/*@media screen and (min-width: 739px){*/
-/*    .header-right{*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        align-items: flex-end;*/
-/*        justify-content: center;*/
-/*    }*/
-/*}*/
+@media screen and (min-width: 723px){
+    .header-right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .resume-item-title span{
+        display: initial;
+    }
+
+
+}
 
 @media screen and (min-width: 800px){
     .project{
