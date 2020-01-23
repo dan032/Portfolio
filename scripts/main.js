@@ -6,13 +6,13 @@ const Renderer = (function () {
 
     // Manages page interactivity
     const managePages = () => {
-        if(window.location.pathname === "danielbutts.ca/home.html"){
+        if(window.location.pathname === "/home.html"){
             toggleHeader("home-link");
         }
-        else if(window.location.pathname === "danielbutts.ca/projects.html"){
+        else if(window.location.pathname === "/projects.html"){
             toggleHeader("projects-link");
         }
-        else if (window.location.pathname === "danielbutts.ca/resume.html"){
+        else if (window.location.pathname === "/resume.html"){
             toggleHeader("resume-link");
         }
     };
