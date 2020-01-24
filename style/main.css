@@ -85,7 +85,6 @@
     .project-desc{
         text-align: center;
         margin-top: 10px;
-
     }
 
     .resume{
@@ -117,6 +116,11 @@
         text-align: left;
         margin-bottom: 0;
     }
+
+    .resume-item-title > h6{
+        text-align: left;
+    }
+
 }
 
 @media screen and (min-width: 650px){
@@ -170,12 +174,13 @@
     .project{
         width: 45%;
         margin: 2%;
+        max-width: 400px;
     }
 }
 
 /**{*/
 /*    margin: 0;*/
-/*}*/
+/*}*
 /*body{*/
 /*    background: whitesmoke;*/
 /*}*/
