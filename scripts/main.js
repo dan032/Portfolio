@@ -12,7 +12,7 @@ const Renderer = (function () {
             prefix = "/site";
         }
 
-        if(window.location.pathname === `${prefix}/home.html` || '/'){
+        if(window.location.pathname === `${prefix}/home.html` || window.location.pathname === '/'){
             toggleHeader("home-link");
             showBody();
         }
