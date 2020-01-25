@@ -6,14 +6,23 @@ const Renderer = (function () {
 
     // Manages page interactivity
     const managePages = () => {
-        if(window.location.pathname === "/home.html"){
+        let prefix = "";
+
+        if (window.location.hostname === 'localhost'){
+            prefix = "/site";
+        }
+
+        if(window.location.pathname === `${prefix}/home.html`){
             toggleHeader("home-link");
+            showBody();
         }
-        else if(window.location.pathname === "/projects.html"){
+        else if(window.location.pathname === `${prefix}/projects.html`){
             toggleHeader("projects-link");
+            showBody();
         }
-        else if (window.location.pathname === "/resume.html"){
+        else if (window.location.pathname === `${prefix}/resume.html`){
             toggleHeader("resume-link");
+            showBody();
         }
     };
 
@@ -22,6 +31,10 @@ const Renderer = (function () {
         let link = document.getElementById(id);
         link.classList.toggle("active");
         link.setAttribute("href", "#");
+    };
+
+    const showBody = () =>{
+        $('body').fadeIn(500)
     };
 
     return {
