@@ -6,21 +6,17 @@ const Renderer = (function () {
 
     // Manages page interactivity
     const managePages = () => {
-        let prefix = "";
 
-        if (window.location.hostname === 'localhost'){
-            prefix = "/site";
-        }
-        if(window.location.pathname === `${prefix}/home.html` || window.location.pathname === '/'){
+        if(window.location.pathname === `/index.html` || window.location.pathname === '/'){
             toggleHeader("home-link");
         }
-        else if(window.location.pathname === `${prefix}/projects.html`){
+        else if(window.location.pathname === `/projects.html`){
             toggleHeader("projects-link");
         }
-        else if (window.location.pathname === `${prefix}/resume.html`){
+        else if (window.location.pathname === `/resume.html`){
             toggleHeader("resume-link");
         }
-        else if (window.location.pathname === `${prefix}/site_plan.html`){
+        else if (window.location.pathname === `/site_plan.html`){
             toggleHeader("plan-link");
         }
 
