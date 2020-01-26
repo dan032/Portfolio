@@ -53,8 +53,6 @@
         justify-content: space-around;
         flex-wrap: wrap;
         max-width: 1200px;
-        /*position: relative;*/
-        /*height: auto;*/
         display: flex;
     }
 
@@ -71,7 +69,6 @@
     .project-image{
         width: 30%;
         margin: 20px 0;
-
     }
 
     .project-title{
@@ -92,7 +89,7 @@
 
     .resume{
         margin: 0 auto;
-        max-width: 70%;
+        max-width: 80%;
     }
 
     .resume-header{
@@ -136,8 +133,6 @@
     .finished{
         text-decoration: line-through sienna;
     }
-
-
 }
 
 @media screen and (min-width: 650px){

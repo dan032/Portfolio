@@ -2,8 +2,9 @@ const path = require('path');
 const express = require("express");
 const app = express();
 
-
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Routes
 
 app.get("/", (req, res) =>{
     res.send("index")
@@ -23,7 +24,7 @@ app.get("/site_plan", (req, res) =>{
 
 app.get("*", (req, res) => {
     res.redirect("index.html");
-})
+});
 
 
 app.listen(process.env.PORT || 8080, () => {
