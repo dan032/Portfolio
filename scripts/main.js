@@ -11,28 +11,29 @@ const Renderer = (function () {
         if (window.location.hostname === 'localhost'){
             prefix = "/site";
         }
-
         if(window.location.pathname === `${prefix}/home.html` || window.location.pathname === '/'){
             toggleHeader("home-link");
-            showBody();
         }
         else if(window.location.pathname === `${prefix}/projects.html`){
             toggleHeader("projects-link");
-            showBody();
         }
         else if (window.location.pathname === `${prefix}/resume.html`){
             toggleHeader("resume-link");
-            showBody();
         }
+        else if (window.location.pathname === `${prefix}/site_plan.html`){
+            toggleHeader("plan-link");
+        }
+
+        showBody();
     };
 
-    // Toggles which header button is active, and alters the URL to prevent the user from loading the page again
+    // Toggles which header button is active
     const toggleHeader = (id) => {
         let link = document.getElementById(id);
         link.classList.toggle("active");
-        link.setAttribute("href", "#");
     };
 
+    // Activates Fade In effect for the page
     const showBody = () =>{
         $('body').fadeIn(500)
     };
