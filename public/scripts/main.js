@@ -64,7 +64,7 @@ const Renderer = (function () {
                     tmp += "</div>";
                 }
             }
-            else{
+            if (xhr.readyState === 4 && xhr.status !== 200){
                 tmp += "<p> Error with GitHub API </p>"
             }
             $projects.append(tmp);
