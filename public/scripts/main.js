@@ -11,8 +11,9 @@ const Renderer = (function () {
             toggleHeader("home-link");
         }
         else if(window.location.pathname === `/projects.html`){
-            toggleHeader("projects-link");
             gitHubRequest();
+            toggleHeader("projects-link");
+
         }
         else if (window.location.pathname === `/resume.html`){
             toggleHeader("resume-link");
