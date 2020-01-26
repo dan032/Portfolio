@@ -5,6 +5,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+//test
 app.get("/", (req, res) =>{
     res.send("index")
 });
