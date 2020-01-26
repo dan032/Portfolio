@@ -12,6 +12,7 @@ const Renderer = (function () {
         }
         else if(window.location.pathname === `/projects.html`){
             toggleHeader("projects-link");
+            gitHubRequest();
         }
         else if (window.location.pathname === `/resume.html`){
             toggleHeader("resume-link");
@@ -32,6 +33,41 @@ const Renderer = (function () {
     // Activates Fade In effect for the page
     const showBody = () =>{
         $('body').fadeIn(500)
+    };
+
+    // Generates the Projects page with data received by the API call.
+    const gitHubRequest = () => {
+        const xhr = new XMLHttpRequest();
+        const url = "https://api.github.com/users/dan032/repos"
+
+        xhr.open("get", url, true);
+
+        xhr.onreadystatechange = () =>{
+            if (xhr.readyState === 4 && xhr.status === 200){
+                const projects = JSON.parse(xhr.responseText);
+                const $projects = $('#projects')
+                const imageArr = ["../img/election.png", "../img/data2.png", "../img/car2.png", "../img/web2.png"]
+                let tmp = "";
+
+                for (let i = 0; i < projects.length; i++){
+                    tmp += "<div class='project'>"
+                    tmp += `<img class='project-image' src=${imageArr[i]}>`
+                    tmp += `<p class="project-title">${projects[i].name}</p>`
+                    tmp += "<div class='project-link'>"
+                    tmp += `<a href = ${projects[i].html_url}><img class='icons' src='img/github.png' alt='Github Image'/></a>`
+
+                    if (i === 2){
+                        tmp += '<a href="https://www.youtube.com/watch?v=999AQMEhrTE"><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n'
+                    }
+                    tmp += "</div>"
+                    tmp += "<p class ='project-desc'>" + projects[i].description + "</p>"
+                    tmp += "</div>"
+                }
+                $projects.append(tmp);
+            }
+        };
+
+        xhr.send()
     };
 
     return {
