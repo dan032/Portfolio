@@ -42,7 +42,7 @@ const Renderer = (function () {
         const $projects = $('#projects');
         let tmp = "";
 
-        xhr.open("get", url, false);
+        xhr.open("get", url, true);
 
         xhr.onreadystatechange = () =>{
             if (xhr.readyState === 4 && xhr.status === 200){
