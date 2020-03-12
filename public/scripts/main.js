@@ -21,18 +21,13 @@ const Renderer = (function () {
             toggleHeader("plan-link");
         }
 
-        showBody();
+        $('body').fadeIn(500)
     };
 
     // Toggles which header button is active
     const toggleHeader = (id) => {
         let link = document.getElementById(id);
         link.classList.toggle("active");
-    };
-
-    // Activates Fade In effect for the page
-    const showBody = () =>{
-        $('body').fadeIn(500)
     };
 
     // Generates the Projects page with data received by the API call.

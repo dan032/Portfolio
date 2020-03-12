@@ -18,14 +18,13 @@ app.get("/resume", (req, res) =>{
     res.send("resume")
 });
 
-app.get("/site_plan", (req, res) =>{
-    res.send("site_plan")
-});
+// app.get("/site_plan", (req, res) =>{
+//     res.send("site_plan")
+// });
 
 app.get("*", (req, res) => {
     res.redirect("index.html");
 });
-
 
 app.listen(process.env.PORT || 8080, () => {
     console.log("Server started...")
