@@ -42,7 +42,7 @@ const Renderer = (function () {
         xhr.onreadystatechange = () =>{
             if (xhr.readyState === 4 && xhr.status === 200){
                 const projects = JSON.parse(xhr.responseText);
-                const imageArr = ["../img/election.png", "../img/data2.png", "../img/car2.png", "../img/web2.png"];
+                const imageArr = ["../img/election.png","../img/school.png", "../img/data2.png", "../img/car2.png", "../img/web2.png"];
 
                 for (let i = 0; i < projects.length; i++) {
                     tmp += "<div class='project'>";
