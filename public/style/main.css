@@ -68,7 +68,7 @@
         /*color: white;*/
         /*background: skyblue;*/
         background: linear-gradient(to left bottom, #95F5D5, #5580DA);
-        font-weight: bold;
+        font-weight: bolder;
     }
 
     .project-image{
@@ -79,6 +79,7 @@
     .project-title{
         /*color: #68475A;*/
         /*color: white;*/
+        text-decoration: underline;
         font-weight: bold;
         word-wrap: break-word;
     }
