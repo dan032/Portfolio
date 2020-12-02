@@ -51,7 +51,7 @@ const Renderer = (function () {
                     tmp += "<div class='project-link'>";
                     tmp += `<a href = ${projects[i].html_url}><img class='icons' src='img/github.png' alt='Github Image'/></a>`;
 
-                    if (i === 2) {
+                    if (i === 4) {
                         tmp += '<a href="https://www.youtube.com/watch?v=999AQMEhrTE"><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n';
                     }
                     tmp += "</div>";
