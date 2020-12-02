@@ -24,6 +24,10 @@
         color: #007bff;
     }
 
+    iframe{
+        display: none;
+    }
+
     #logo{
         font-size: 2em;
         margin-left: 5%;
@@ -97,6 +101,7 @@
     .resume{
         margin: 0 auto;
         max-width: 80%;
+        display: block;
     }
 
     .resume-header{
@@ -149,6 +154,13 @@
 }
 
 @media screen and (min-width: 770px){
+    .resume{
+        display: none;
+    }
+    iframe{
+        display: block;
+        margin: 0 auto;
+    }
     .resume-header{
         display: flex;
         justify-content: space-between;
