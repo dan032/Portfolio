@@ -84,9 +84,9 @@
     }
 
     .project-bottom{
-        height: 100px;
         display: flex;
-        justify-content: center;
+        margin: 20px;
+        justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
     }
