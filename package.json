@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dan032/Portfolio#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-sslify": "^1.2.0"
   }
 }

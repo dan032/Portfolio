@@ -183,6 +183,9 @@
 }
 
 @media screen and (min-width: 770px){
+    .home-container{
+        margin-top: 150px;
+    }
     .resume{
         display: none;
     }

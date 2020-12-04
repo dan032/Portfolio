@@ -1,8 +1,11 @@
 const path = require('path');
 const express = require("express");
+const enforce = require('express-sslify');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 // Routes
 
@@ -17,10 +20,6 @@ app.get("/projects", (req, res) =>{
 app.get("/resume", (req, res) =>{
     res.send("resume")
 });
-
-// app.get("/site_plan", (req, res) =>{
-//     res.send("site_plan")
-// });
 
 app.get("*", (req, res) => {
     res.redirect("index.html");
