@@ -65,14 +65,23 @@
     .project{
         width: 95%;
         border: 1px solid lightgray;
-        box-shadow: 3px 3px 3px 3px #777;
-        padding: 1em;
+        box-shadow: 0px 10px 20px #cad9fc, 0 6px 6px #9ab6f9;
         border-radius: 2%;
         margin-bottom: 10%;
         /*color: white;*/
         /*background: skyblue;*/
-        background: linear-gradient(to left bottom, #95F5D5, #5580DA);
         font-weight: bolder;
+    }
+
+    .project-top{
+        background: linear-gradient(to left bottom, #95F5D5, #5580DA);
+        height: 40%;
+        /*margin: 0;*/
+    }
+
+    .project-bottom{
+        padding: 1em;
+        margin-bottom: 10%;
     }
 
     .project-image{
@@ -81,21 +90,26 @@
     }
 
     .project-title{
-        /*color: #68475A;*/
+        color: #404040;
         /*color: white;*/
         text-decoration: underline;
-        font-weight: bold;
+        font-size: 1.4em;
+        font-weight: bolder;
         word-wrap: break-word;
     }
 
     .project-link{
         display: flex;
         justify-content: center;
+
     }
 
     .project-desc{
-        text-align: center;
+        /*text-align: center;*/
         margin-top: 10px;
+        color: #595959;
+        font-weight: normal;
+        font-size: 1.2em;
     }
 
     .resume{

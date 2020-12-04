@@ -46,17 +46,23 @@ const Renderer = (function () {
 
                 for (let i = 0; i < projects.length; i++) {
                     tmp += "<div class='project'>";
+                    tmp += "<div class='project-top'>";
                     tmp += `<img class='project-image' src=${imageArr[i]} alt="Project Image">`;
+                    tmp += "</div>";
+                    tmp += "<div class='project-bottom'>";
                     tmp += `<p class="project-title">${projects[i].name}</p>`;
                     tmp += "<div class='project-link'>";
                     tmp += `<a href = ${projects[i].html_url}><img class='icons' src='img/github.png' alt='Github Image'/></a>`;
-
                     if (i === 4) {
                         tmp += '<a href="https://www.youtube.com/watch?v=999AQMEhrTE"><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n';
                     }
                     tmp += "</div>";
                     tmp += "<p class ='project-desc'>" + projects[i].description + "</p>";
                     tmp += "</div>";
+                    tmp += "</div>";
+
+
+
                 }
             }
             if (xhr.readyState === 4 && xhr.status !== 200){
