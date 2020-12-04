@@ -3,7 +3,11 @@ const express = require("express");
 const enforce = require('express-sslify');
 
 const app = express();
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
+if (process.env.PORT !== undefined){
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Routes
