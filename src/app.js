@@ -25,7 +25,7 @@ app.get("/resume", (req, res) =>{
 });
 
 app.get("*", (req, res) => {
-    res.redirect("index.html");
+    res.redirect("/");
 });
 
 app.listen(process.env.PORT || 8080, () => {
