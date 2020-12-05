@@ -94,8 +94,15 @@
         align-items: center;
         flex-wrap: wrap;
         padding-bottom: 10px;
+        flex-direction: column;
     }
 
+    .technologies{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .tech {
         background-color: #e21d24;
         color: white;

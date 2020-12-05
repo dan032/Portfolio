@@ -69,9 +69,11 @@ const Renderer = (function () {
                     tmp += "</div>";
                     tmp += "<div class='project-bottom'>";
                     tmp += "<p style='margin: 3px'> Technologies: </p>";
+                    tmp += "<div class='technologies'>";
                     for (let j = 0; j < technologies[i].length; j++){
                         tmp += `<span class="tech">${technologies[i][j]}</span>`
                     }
+                    tmp += "</div>";
                     tmp += "</div>";
                     tmp += "</div>";
 
