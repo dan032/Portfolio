@@ -39,6 +39,10 @@
         margin-right: 10px;
     }
 
+    .navbar-toggler:active, .navbar-toggler:focus {
+        outline: 0;
+    }
+
     img{
         border-radius: 50%;
     }
