@@ -9,7 +9,6 @@
         background-color: whitesmoke;
         line-height: 2em;
         font-size: 1em;
-        /*display: none;*/
     }
 
     #portfolio-nav{
@@ -121,6 +120,7 @@
 
     .project-middle{
         padding: 1em 1em 0 1em;
+        align-self: center;
     }
 
     .project-bottom{
