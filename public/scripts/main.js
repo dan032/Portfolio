@@ -21,7 +21,7 @@ const Renderer = (function () {
             toggleHeader("plan-link");
         }
 
-        $('body').fadeIn(500)
+        $('.container').fadeIn(500)
     };
 
     // Toggles which header button is active

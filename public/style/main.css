@@ -9,7 +9,7 @@
         background-color: whitesmoke;
         line-height: 2em;
         font-size: 1em;
-        display: none;
+        /*display: none;*/
     }
 
     #portfolio-nav{
@@ -82,6 +82,7 @@
         margin-top: 2%;
         min-height: 2em;
         padding: 0.2em;
+        display: none;
     }
 
     #profile-pic{
