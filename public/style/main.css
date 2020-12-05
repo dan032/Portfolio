@@ -147,9 +147,8 @@
     iframe{
         display: block;
         margin: 0 auto;
-        width: 80vw;
     }
-    
+
     .resume-header{
         display: flex;
         justify-content: space-between;
