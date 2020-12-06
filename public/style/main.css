@@ -95,6 +95,10 @@
         margin: 10px 10px;
     }
 
+    .github-icon{
+        border: 5px solid #42A5FC;
+    }
+
     #projects{
         justify-content: space-around;
         flex-wrap: wrap;
