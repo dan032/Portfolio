@@ -53,6 +53,9 @@ const Renderer = (function () {
                 ];
 
                 for (let i = 0; i < projects.length; i++) {
+                    if (projects[i].name === "CMI_Rogers"){
+                        continue
+                    }
                     tmp += "<div class='project'>";
                     tmp += "<div class='project-top'>";
                     tmp += `<img class='project-image' src=${imageArr[i]} alt="Project Image">`;
