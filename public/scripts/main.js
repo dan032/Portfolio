@@ -42,6 +42,9 @@ const Renderer = (function () {
         xhr.onreadystatechange = () =>{
             if (xhr.readyState === 4 && xhr.status === 200){
                 const projects = JSON.parse(xhr.responseText);
+                const filtered = projects.filter((val, idx, arr) => {
+                    return val.name !== "CMI_Rogers"
+                });
                 const imageArr = ["../img/star.png","../img/election.png","../img/school.png", "../img/data2.png", "../img/car2.png", "../img/web2.png"];
                 const technologies = [
                     ["C++"],
@@ -52,23 +55,20 @@ const Renderer = (function () {
                     ["HTML", "CSS", "Javascript", "NodeJS"]
                 ];
 
-                for (let i = 0; i < projects.length; i++) {
-                    if (projects[i].name === "CMI_Rogers"){
-                        continue
-                    }
+                for (let i = 0; i < filtered.length; i++) {
                     tmp += "<div class='project'>";
                     tmp += "<div class='project-top'>";
                     tmp += `<img class='project-image' src=${imageArr[i]} alt="Project Image">`;
                     tmp += "</div>";
                     tmp += "<div class='project-middle'>";
-                    tmp += `<p class="project-title">${projects[i].name}</p>`;
+                    tmp += `<p class="project-title">${filtered[i].name}</p>`;
                     tmp += "<div class='project-link'>";
-                    tmp += `<a href = ${projects[i].html_url}><img class='icons github-icon' src='img/github.png' alt='Github Image'/></a>`;
+                    tmp += `<a href = ${filtered[i].html_url}><img class='icons github-icon' src='img/github.png' alt='Github Image'/></a>`;
                     if (i === 4) {
                         tmp += '<a href="https://www.youtube.com/watch?v=999AQMEhrTE"><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n';
                     }
                     tmp += "</div>";
-                    tmp += "<p class ='project-desc'>" + projects[i].description + "</p>";
+                    tmp += "<p class ='project-desc'>" + filtered[i].description + "</p>";
                     tmp += "</div>";
                     tmp += "<div class='project-bottom'>";
                     tmp += "<p style='margin: 3px'> Technologies: </p>";
