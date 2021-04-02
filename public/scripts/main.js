@@ -42,7 +42,7 @@ const Renderer = (function () {
         xhr.onreadystatechange = () =>{
             if (xhr.readyState === 4 && xhr.status === 200){
                 const projects = JSON.parse(xhr.responseText);
-                const repos = [
+                const chosenRepos = [
                     {
                         name: "AdventOfCode2020",
                         imageUrl: "../img/star.png",
@@ -76,21 +76,21 @@ const Renderer = (function () {
                     }
                 ];
 
-                const filtered = projects.filter((val, idx, arr) => {
-                    return repos.some(e => e.name === val.name)
+                const filtered = projects.filter((val) => {
+                    return chosenRepos.some(e => e.name === val.name)
                 });
 
                 for (let i = 0; i < filtered.length; i++) {
                     tmp += "<div class='project'>";
                     tmp += "<div class='project-top'>";
-                    tmp += `<img class='project-image' src=${repos[i].imageUrl} alt="Project Image">`;
+                    tmp += `<img class='project-image' src=${chosenRepos[i].imageUrl} alt="Project Image">`;
                     tmp += "</div>";
                     tmp += "<div class='project-middle'>";
                     tmp += `<p class="project-title">${filtered[i].name}</p>`;
                     tmp += "<div class='project-link'>";
                     tmp += `<a href = ${filtered[i].html_url}><img class='icons github-icon' src='img/github.png' alt='Github Image'/></a>`;
-                    if (repos[i].youtube) {
-                        tmp += `<a href=${repos[i].youtube}><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n`;
+                    if (chosenRepos[i].youtube) {
+                        tmp += `<a href=${chosenRepos[i].youtube}><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n`;
                     }
                     tmp += "</div>";
                     tmp += "<p class ='project-desc'>" + filtered[i].description + "</p>";
@@ -98,8 +98,8 @@ const Renderer = (function () {
                     tmp += "<div class='project-bottom'>";
                     tmp += "<p style='margin: 3px'> Technologies: </p>";
                     tmp += "<div class='technologies'>";
-                    for (let j = 0; j < repos[i].technologies.length; j++){
-                        tmp += `<span class="tech">${repos[i].technologies[j]}</span>`
+                    for (let j = 0; j < chosenRepos[i].technologies.length; j++){
+                        tmp += `<span class="tech">${chosenRepos[i].technologies[j]}</span>`
                     }
                     tmp += "</div>";
                     tmp += "</div>";
