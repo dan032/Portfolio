@@ -42,30 +42,55 @@ const Renderer = (function () {
         xhr.onreadystatechange = () =>{
             if (xhr.readyState === 4 && xhr.status === 200){
                 const projects = JSON.parse(xhr.responseText);
-                const filtered = projects.filter((val, idx, arr) => {
-                    return val.name !== "CMI_Rogers"
-                });
-                const imageArr = ["../img/star.png","../img/election.png","../img/school.png", "../img/data2.png", "../img/car2.png", "../img/web2.png"];
-                const technologies = [
-                    ["C++"],
-                    ["Python", "Numpy", "Pandas"],
-                    ["React Native", "Firebase"],
-                    ["Python"],
-                    ["Java", "Room Persistence"],
-                    ["HTML", "CSS", "Javascript", "NodeJS"]
+                const repos = [
+                    {
+                        name: "AdventOfCode2020",
+                        imageUrl: "../img/star.png",
+                        technologies: ["C++"],
+                    },
+                    {
+                        name:  "CanadaElections",
+                        imageUrl: "../img/election.png",
+                        technologies: ["Python", "Numpy", "Pandas"]
+                    },
+                    {
+                        name: "Groupski",
+                        imageUrl: "../img/school.png",
+                        technologies:  ["React Native", "Firebase"],
+                    },
+                    {
+                        name: "IndeedScraping",
+                        imageUrl: "../img/data2.png",
+                        technologies: ["Python"]
+                    },
+                    {
+                        name: "ParkPal",
+                        imageUrl: "../img/car2.png",
+                        technologies: ["Java", "Room Persistence"],
+                        youtube: "https://www.youtube.com/watch?v=999AQMEhrTE"
+                    },
+                    {
+                        name: "Portfolio",
+                        imageUrl: "../img/web2.png",
+                        technologies: ["HTML", "CSS", "Javascript", "NodeJS"]
+                    }
                 ];
+
+                const filtered = projects.filter((val, idx, arr) => {
+                    return repos.some(e => e.name === val.name)
+                });
 
                 for (let i = 0; i < filtered.length; i++) {
                     tmp += "<div class='project'>";
                     tmp += "<div class='project-top'>";
-                    tmp += `<img class='project-image' src=${imageArr[i]} alt="Project Image">`;
+                    tmp += `<img class='project-image' src=${repos[i].imageUrl} alt="Project Image">`;
                     tmp += "</div>";
                     tmp += "<div class='project-middle'>";
                     tmp += `<p class="project-title">${filtered[i].name}</p>`;
                     tmp += "<div class='project-link'>";
                     tmp += `<a href = ${filtered[i].html_url}><img class='icons github-icon' src='img/github.png' alt='Github Image'/></a>`;
-                    if (i === 4) {
-                        tmp += '<a href="https://www.youtube.com/watch?v=999AQMEhrTE"><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n';
+                    if (repos[i].youtube) {
+                        tmp += `<a href=${repos[i].youtube}><img class="icons" src="../img/youtube.png" alt=\'Youtube Image\'/></a>\n`;
                     }
                     tmp += "</div>";
                     tmp += "<p class ='project-desc'>" + filtered[i].description + "</p>";
@@ -73,8 +98,8 @@ const Renderer = (function () {
                     tmp += "<div class='project-bottom'>";
                     tmp += "<p style='margin: 3px'> Technologies: </p>";
                     tmp += "<div class='technologies'>";
-                    for (let j = 0; j < technologies[i].length; j++){
-                        tmp += `<span class="tech">${technologies[i][j]}</span>`
+                    for (let j = 0; j < repos[i].technologies.length; j++){
+                        tmp += `<span class="tech">${repos[i].technologies[j]}</span>`
                     }
                     tmp += "</div>";
                     tmp += "</div>";
