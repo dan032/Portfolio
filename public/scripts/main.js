@@ -104,7 +104,6 @@ const Renderer = (function () {
                     tmp += "</div>";
                     tmp += "</div>";
                     tmp += "</div>";
-
                 }
             }
             if (xhr.readyState === 4 && xhr.status !== 200){
