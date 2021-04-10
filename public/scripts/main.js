@@ -68,11 +68,6 @@ const Renderer = (function () {
                         imageUrl: "../img/car2.png",
                         technologies: ["Java", "Room Persistence"],
                         youtube: "https://www.youtube.com/watch?v=999AQMEhrTE"
-                    },
-                    {
-                        name: "Portfolio",
-                        imageUrl: "../img/web2.png",
-                        technologies: ["HTML", "CSS", "Javascript", "NodeJS"]
                     }
                 ];
 
